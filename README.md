@@ -11,7 +11,9 @@ A local-first benchmark for evaluating retrieval quality inside agentic workflow
 
 ![Architecture diagram for Tool-Memory-Evidence retrieval benchmark](assets/tme_architecture.svg)
 
-Classic RAG evaluation asks whether a system retrieved the right document. Agentic systems also need to select the right tool, apply the right durable memory or policy, and retrieve the right evidence before acting. This benchmark makes those retrieval targets measurable with Qdrant, FastEmbed, a small synthetic dataset, and reproducible local commands.
+Classic RAG evaluation asks whether a system retrieved the right document.
+Agentic systems also need to select the right tool, apply the right durable memory or policy, and retrieve the right evidence before acting.
+This benchmark makes those retrieval targets measurable with Qdrant, FastEmbed, a small synthetic dataset, and reproducible local commands.
 
 Current status: runnable local benchmark with validated dense, sparse, rerank, and hybrid-rerank strategies.
 
@@ -32,7 +34,8 @@ The benchmark is local-first, but first-run FastEmbed model downloads may requir
 
 ## Why This Exists
 
-Document-only retrieval can hide failures that matter in agentic systems. A workflow may find a relevant document while selecting the wrong tool, skipping a required policy memory, or grounding the final answer in weak evidence.
+Document-only retrieval can hide failures that matter in agentic systems.
+A workflow may find a relevant document while selecting the wrong tool, skipping a required policy memory, or grounding the final answer in weak evidence.
 
 This project isolates those retrieval decisions so quality and latency trade-offs are visible without building a full agent framework.
 
@@ -76,7 +79,8 @@ Final release-readiness rerun in Qdrant `local-memory` mode:
 
 ![Strategy comparison results](assets/strategy_results.svg)
 
-Latency is run- and environment-sensitive. The values above are the final verified local-memory rerun for this repository state.
+Latency is run- and environment-sensitive.
+The values above are the final verified local-memory rerun for this repository state.
 
 ## Key Findings
 
@@ -122,7 +126,9 @@ docker compose up -d
 python -m app.evaluate --strategy dense --qdrant-mode server --qdrant-url http://localhost:6333 --recreate-collections --write-report reports/agentic_retrieval_results.md
 ```
 
-Restricted networks may block Docker Hub or related image-pull infrastructure. The benchmark is local-first, but first-run FastEmbed model downloads may require network access unless the required model files are already cached. Fully offline execution requires dependencies and model files to already be available locally.
+Restricted networks may block Docker Hub or related image-pull infrastructure.
+The benchmark is local-first, but first-run FastEmbed model downloads may require network access unless the required model files are already cached.
+Fully offline execution requires dependencies and model files to already be available locally.
 
 Default models:
 
@@ -166,10 +172,12 @@ MIT License. See [LICENSE](LICENSE).
 
 ## Future Upstream Plan
 
-The first upstream step should be a Qdrant/FastEmbed GitHub Discussion, not a large unsolicited PR. The discussion should ask whether maintainers would find this useful as a docs example or experimental benchmark and where they would prefer it to live.
+The first upstream step should be a Qdrant/FastEmbed GitHub Discussion, not a large unsolicited PR.
+The discussion should ask whether maintainers would find this useful as a docs example or experimental benchmark and where they would prefer it to live.
 
 The intended upstream contribution would likely be a trimmed docs/example or experiments artifact, not this full repository.
 
 ## Disclaimer
 
-This repository is an independent benchmark project using Qdrant and FastEmbed. It is not official, endorsed, or approved by Qdrant/FastEmbed maintainers unless they explicitly say so in the future.
+This repository is an independent benchmark project using Qdrant and FastEmbed.
+It is not official, endorsed, or approved by Qdrant/FastEmbed maintainers unless they explicitly say so in the future.
