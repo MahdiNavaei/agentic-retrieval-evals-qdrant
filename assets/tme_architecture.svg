@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="430" viewBox="0 0 1120 430" role="img" aria-labelledby="title desc">
+  <title id="title">Tool-Memory-Evidence retrieval architecture</title>
+  <desc id="desc">A technical diagram showing user task input flowing through tool, memory, and evidence retrieval, optional reranking, and metrics reporting, backed by FastEmbed and Qdrant.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"/>
+    </marker>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2742"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1120" height="430" rx="18" fill="#07111f"/>
+  <rect x="22" y="22" width="1076" height="386" rx="14" fill="url(#panel)" stroke="#155e75" stroke-width="1.5"/>
+
+  <text x="56" y="62" fill="#e0f2fe" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="25" font-weight="700">Tool-Memory-Evidence Retrieval Benchmark</text>
+  <text x="56" y="91" fill="#9cc8d8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Local evaluation harness for agentic retrieval surfaces using Qdrant and FastEmbed</text>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <rect x="56" y="155" width="145" height="74" rx="10" fill="#102a43" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="128.5" y="185" text-anchor="middle" fill="#f0f9ff" font-size="15" font-weight="700">User task</text>
+    <text x="128.5" y="207" text-anchor="middle" fill="#b7d7e4" font-size="12">query + expected ids</text>
+
+    <line x1="201" y1="192" x2="270" y2="192" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="270" y="112" width="170" height="60" rx="9" fill="#0f3a5c" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="355" y="137" text-anchor="middle" fill="#f0f9ff" font-size="14" font-weight="700">Tool retrieval</text>
+    <text x="355" y="156" text-anchor="middle" fill="#c7e9f4" font-size="11">select capability</text>
+
+    <rect x="270" y="190" width="170" height="60" rx="9" fill="#0f3a5c" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="355" y="215" text-anchor="middle" fill="#f0f9ff" font-size="14" font-weight="700">Memory retrieval</text>
+    <text x="355" y="234" text-anchor="middle" fill="#c7e9f4" font-size="11">policy or preference</text>
+
+    <rect x="270" y="268" width="170" height="60" rx="9" fill="#0f3a5c" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="355" y="293" text-anchor="middle" fill="#f0f9ff" font-size="14" font-weight="700">Evidence retrieval</text>
+    <text x="355" y="312" text-anchor="middle" fill="#c7e9f4" font-size="11">grounding document</text>
+
+    <line x1="440" y1="142" x2="515" y2="192" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="440" y1="220" x2="515" y2="220" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="440" y1="298" x2="515" y2="248" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="515" y="175" width="175" height="90" rx="10" fill="#12304d" stroke="#67e8f9" stroke-width="1.5"/>
+    <text x="602.5" y="207" text-anchor="middle" fill="#f0f9ff" font-size="15" font-weight="700">Candidate sets</text>
+    <text x="602.5" y="231" text-anchor="middle" fill="#c7e9f4" font-size="12">dense, sparse, or merged</text>
+
+    <line x1="690" y1="220" x2="760" y2="220" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="760" y="175" width="148" height="90" rx="10" fill="#134e4a" stroke="#5eead4" stroke-width="1.5"/>
+    <text x="834" y="207" text-anchor="middle" fill="#f0fdfa" font-size="15" font-weight="700">Optional rerank</text>
+    <text x="834" y="231" text-anchor="middle" fill="#bfede7" font-size="12">cross-encoder scoring</text>
+
+    <line x1="908" y1="220" x2="978" y2="220" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="978" y="175" width="92" height="90" rx="10" fill="#0f2f45" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="1024" y="207" text-anchor="middle" fill="#f0f9ff" font-size="15" font-weight="700">Metrics</text>
+    <text x="1024" y="229" text-anchor="middle" fill="#c7e9f4" font-size="11">quality</text>
+    <text x="1024" y="246" text-anchor="middle" fill="#c7e9f4" font-size="11">latency</text>
+
+    <rect x="515" y="315" width="180" height="54" rx="9" fill="#082f49" stroke="#0ea5e9" stroke-width="1.2"/>
+    <text x="605" y="337" text-anchor="middle" fill="#e0f2fe" font-size="13" font-weight="700">FastEmbed</text>
+    <text x="605" y="355" text-anchor="middle" fill="#b7d7e4" font-size="11">dense, sparse, reranker models</text>
+
+    <rect x="735" y="315" width="180" height="54" rx="9" fill="#082f49" stroke="#0ea5e9" stroke-width="1.2"/>
+    <text x="825" y="337" text-anchor="middle" fill="#e0f2fe" font-size="13" font-weight="700">Qdrant</text>
+    <text x="825" y="355" text-anchor="middle" fill="#b7d7e4" font-size="11">local-memory, disk, server</text>
+
+    <line x1="605" y1="315" x2="605" y2="268" stroke="#1d9dc2" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <line x1="825" y1="315" x2="825" y2="268" stroke="#1d9dc2" stroke-width="1.5" stroke-dasharray="5 5"/>
+  </g>
+</svg>

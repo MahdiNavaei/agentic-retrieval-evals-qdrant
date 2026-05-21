@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+.qdrant_local/
+*.tmp
+reports/*.tmp
+docs/PRD_TOOL_MEMORY_EVIDENCE_RETRIEVAL_BENCHMARK.md
+docs/AGENTS.md
+docs/AI_ENGINEERING_CONSTITUTION.md
+docs/AGENTS_LEDGER.md
+docs/QDRANT_DISCUSSION_DRAFT.md
